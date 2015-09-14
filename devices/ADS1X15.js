@@ -120,7 +120,7 @@ ADS1X15.prototype.getADC = function(channel, callback) {
                     CONFIG.DR_1600SPS   | // 1600 samples per second (default)
                     CONFIG.MODE_SINGLE;   // Single-shot mode (default)
   // Set PGA/voltage range
-  config |= this.gain;
+  config |= GAINS[this.gain];
   // Set single-ended input channel
   config |= [CONFIG.MUX_SINGLE_0,CONFIG.MUX_SINGLE_1,CONFIG.MUX_SINGLE_2,CONFIG.MUX_SINGLE_3][channel];
   // Set 'start single-conversion' bit
